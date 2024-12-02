@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stock Price Prediction</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Stock Price Prediction</h1>
+    <p>Select a company to predict its stock price for the next day.</p>
+    <table class="data">
+        {{ tables|safe }}
+    </table>
+    <form action="/predict" method="post">
+        <label for="symbol">Enter Stock Symbol:</label>
+        <input type="text" id="symbol" name="symbol" required>
+        <input type="submit" value="Predict">
+    </form>
+</body>
+</html>
